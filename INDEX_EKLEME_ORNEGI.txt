@@ -1,0 +1,14 @@
+index.php dosyanizda cagrilar tablosuna INSERT yapilan bolumu bulun.
+Ornek:
+
+$ekle = $db->prepare("INSERT INTO cagrilar (masa_kodu, durum, tarih) VALUES (?, 0, NOW())");
+$ekle->execute([$gelenMasa]);
+
+Hemen altina sunu ekleyin:
+
+if (file_exists(__DIR__ . '/firebase_gonder.php')) {
+    require_once __DIR__ . '/firebase_gonder.php';
+    masaCagrisiFirebaseGonder($db, $gelenMasa, $db->lastInsertId());
+}
+
+Eger degisken adiniz $gelenMasa degilse, masa kodu hangi degiskendeyse onu kullanin.
