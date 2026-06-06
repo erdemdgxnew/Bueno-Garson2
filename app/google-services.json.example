@@ -1,0 +1,5 @@
+Bu dosyanın adı google-services.json değildir.
+Firebase Console > Project Settings > Your apps > Android uygulaması ekle:
+Paket adı: com.bueno.garson
+Uygulama adı: Bueno Garson
+Sonra indirilen google-services.json dosyasını bu app/ klasörüne koyun.
